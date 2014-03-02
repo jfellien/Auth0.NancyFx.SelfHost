@@ -38,11 +38,12 @@ The `AuthenticationConfig` gives you more control. Use `RedirectOnLoginFailed` t
 
 After you enabled the `Auth0Authentication` you are able to block all unauthenticated requests by unsing
 
-  public class SecurePage : NancyModule
-  {
-    public SecurePage()
+
+    public class SecurePage : NancyModule
     {
-      this.RequiresAuthentication(); //New implemetation of default extension
-      Get["/securepage"] = o => View["securepage"];
+        public SecurePage()
+        {
+            this.RequiresAuthentication(); //New implemetation of default extension
+            Get["/securepage"] = o => View["securepage"];
+        }
     }
-  }
