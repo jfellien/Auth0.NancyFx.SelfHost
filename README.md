@@ -5,7 +5,7 @@ Auth0 Authentication Library for NancyFx SelfHosted Applications
 
 Ready to use in NancyFx style: super-duper-happy-path implementation. Install the package by NuGet
 
-    >Install-Package Auth0.NancyFx.SelfHost
+    PM> Install-Package Auth0.NancyFx.SelfHost
    
 In your Nancy self hosted application add to your BootStrapper:
 
