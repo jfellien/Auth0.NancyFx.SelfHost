@@ -47,3 +47,28 @@ After you enabled the `Auth0Authentication` you are able to block all unauthenti
             Get["/securepage"] = o => View["securepage"];
         }
     }
+    
+    
+But this it's not all. You need for Auth0 a callback route, and a way log in and log out too. Take look for my implementation.
+
+    public class Authentication : NancyModule
+    {
+        public Authentication()
+        {
+            Get["/login"] = o =>
+            {
+                if (this.SessionIsAuthenticated())
+                    return Response.AsRedirect("securepage");
+
+                return View["login"];
+            };
+
+            Get["/login-callback"] = o => this
+                .AuthenticateThisSession()
+                .ThenRedirectTo("securepage");
+
+            Get["/logout"] = o => this
+                .RemoveAuthenticationFromThisSession()
+                .ThenRedirectTo("index");
+        }
+    }
