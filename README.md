@@ -34,7 +34,7 @@ The `AuthenticationConfig` gives you more control. Use `RedirectOnLoginFailed` t
 **Important Hint:** Auth0.Nancy.SelfHost enabled in background the `CookieBasedSessions` setting. If you use in your App this setting too, switch it of now.
 
 
-###How to use it in my App?
+###How to use it in your project?
 
 After you enabled the `Auth0Authentication` you are able to block all unauthenticated requests by unsing
 
@@ -43,7 +43,7 @@ After you enabled the `Auth0Authentication` you are able to block all unauthenti
     {
         public SecurePage()
         {
-            this.RequiresAuthentication(); //New implemetation of default extension
+            this.RequiresAuthentication(); //<- This is a new implemetation of default extension
             Get["/securepage"] = o => View["securepage"];
         }
     }
@@ -72,3 +72,36 @@ But this it's not all. You need for Auth0 a callback route, and a way log in and
                 .ThenRedirectTo("index");
         }
     }
+    
+###Implementig with Auth0
+
+Look into the sample. The implementation with Auth0 is like any other implementation. 
+
+First insert your Auth0 settings into app.config (like here [ASP.Net Auth0 Documentation](https://github.com/auth0/docs/blob/master/docs/aspnet-tutorial.md))
+
+    <appSettings>
+        <!-- Auth0 configuration -->
+        <add key="auth0:ClientId" value="YOUR-CLIENTID" />
+        <add key="auth0:ClientSecret" value="YOUR-CLINET-SECTRET" />
+        <add key="auth0:Domain" value="YOUR-DOMAIN" />
+        <add key="auth0:CallbackUrl" value="http://localhost:3579/login-callback" />
+    </appSettings>
+    
+and put the Widget Code into your login website
+
+    <div id="root" style="width: 400px; margin: 40px auto; padding: 10px; border-style: dashed; border-width: 1px;">
+        embeded area
+    </div>
+    <script src="https://cdn.auth0.com/w2/auth0-widget-2.4.6.min.js"></script>
+    <script>
+        var widget = new Auth0Widget({
+            domain:         'YOUR_DOMAIN',
+            clientID:       'YOUR-CLIENTID',
+            callbackURL:    'http://localhost:3579/login-callback'
+            });
+            
+        widget.signin({ container: 'root', chrome: true });
+    </script>
+    
+
+That's it
