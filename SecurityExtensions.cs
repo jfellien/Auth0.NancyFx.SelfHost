@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Nancy.Security;
 
-namespace Auth0.Nancy.SelfHosted
+namespace Auth0.Nancy.SelfHost
 {
-    internal static class SecurityExtensions
+    public static class SecurityExtensions
     {
         public static Auth0User ToUserModel(this IUserIdentity identity)
         {

@@ -2,9 +2,9 @@
 using Nancy;
 using Nancy.Security;
 
-namespace Auth0.Nancy.SelfHosted
+namespace Auth0.Nancy.SelfHost
 {
-    internal static class ModuleExtensions
+    public static class ModuleExtensions
     {
         private static readonly Auth0.Client Auth0Client = new Auth0.Client(
             ConfigurationManager.AppSettings["auth0:ClientId"],

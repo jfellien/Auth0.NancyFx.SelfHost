@@ -1,4 +1,4 @@
-﻿namespace Auth0.Nancy.SelfHosted
+﻿namespace Auth0.Nancy.SelfHost
 {
     public class AuthenticationConfig
     {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Nancy.Security;
 
-namespace Auth0.Nancy.SelfHosted
+namespace Auth0.Nancy.SelfHost
 {
     public class Auth0User : IUserIdentity
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{2B3C4EBC-258B-4F5C-BD4B-B6C2549E3F35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Auth0.Nancy.SelfHosted</RootNamespace>
-    <AssemblyName>Auth0.Nancy.SelfHosted</AssemblyName>
+    <RootNamespace>Auth0.Nancy.SelfHost</RootNamespace>
+    <AssemblyName>Auth0.Nancy.SelfHost</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

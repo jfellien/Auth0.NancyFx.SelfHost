@@ -6,7 +6,7 @@ using Nancy.Responses;
 using Nancy.Security;
 using Nancy.Session;
 
-namespace Auth0.Nancy.SelfHosted
+namespace Auth0.Nancy.SelfHost
 {
     public class Auth0Authentication
     {
