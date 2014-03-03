@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Secure Page</title>
+</head>
+<body>
+	<p>
+		<span>Name:</span>
+		<span>@Model.UserName</span>
+	</p>
+	<p>
+		<span>Nick Name:</span>
+		<span>@Model.Nickname</span>
+	</p>
+	<p>This page is reachable only by authentication with auth0</p>
+	<p><a href="logout">Log Out</a></p>
+</body>
+</html>

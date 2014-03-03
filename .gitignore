@@ -108,3 +108,5 @@ Backup*/
 UpgradeLog*.XML
 Properties/AssemblyInfo.cs
 Thumbs.db
+SelfHostBuild/
+*.nuspec

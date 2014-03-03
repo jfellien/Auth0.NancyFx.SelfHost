@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+
+	<style type="text/css">
+
+		body {
+			text-align: center;
+		}
+
+	</style>
+
+</head>
+<body>
+<p>Login Page</p>
+<div id="root" style="width: 400px; margin: 40px auto; padding: 10px; border-style: dashed; border-width: 1px;">
+    embeded area
+</div>
+<script src="https://cdn.auth0.com/w2/auth0-widget-2.4.6.min.js"></script>
+<script>
+	
+  var widget = new Auth0Widget({
+        domain:         'YOUR_DOMAIN',
+        clientID:       'YOUR-CLIENTID',
+        callbackURL:    'http://localhost:3579/login-callback'
+  });
+  
+
+  widget.signin({ container: 'root', chrome: true });
+</script>
+
+</body>
+</html>
